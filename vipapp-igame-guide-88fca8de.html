@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 日常查询与延伸阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1e1e1e;
+            background: #f6f7fa;
+        }
+
+        a {
+            color: #1e6b9b;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #b9472a;
+            border-bottom-color: #b9472a;
+        }
+
+        /* ---------- hero 深色头图 ---------- */
+        .hero {
+            background: linear-gradient(135deg, #0f1a2e 0%, #162a44 60%, #1d3b5a 100%);
+            color: #eaeef3;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(255,255,240,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            max-width: 640px;
+            margin: 0.8rem auto 1.2rem;
+            opacity: 0.88;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(2px);
+            padding: 0.4rem 1.6rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #dce6f0;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---------- 主容器 ---------- */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+
+        /* 卡片区域 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s, box-shadow 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #1c2b3e;
+            border-left: 4px solid #1e6b9b;
+            padding-left: 0.7rem;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #3e4a5a;
+            margin-bottom: 0.4rem;
+        }
+
+        .card .highlight {
+            font-weight: 500;
+            color: #b9472a;
+        }
+
+        /* 说明区 + FAQ 混合 */
+        .info-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 2.8rem;
+        }
+
+        .info-section h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #162a44;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.2px;
+        }
+
+        .info-section p {
+            margin-bottom: 1rem;
+            color: #2f3b4b;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5e9f0;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #1f3349;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .faq-answer {
+            color: #4a5769;
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .faq-answer a {
+            font-weight: 500;
+        }
+
+        /* 底部 */
+        .site-footer {
+            border-top: 1px solid #d7dce6;
+            padding-top: 2rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #5a677a;
+            font-size: 0.9rem;
+        }
+
+        .site-footer a {
+            color: #1e6b9b;
+        }
+
+        .site-footer a:hover {
+            color: #b9472a;
+        }
+
+        .footer-links {
+            margin: 0.8rem 0 0.4rem;
+        }
+
+        .footer-links span {
+            margin: 0 0.6rem;
+            color: #b0b9c9;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1.6rem 1rem 2rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+            .info-section {
+                padding: 1.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>爱游戏 · 日常查询与延伸阅读</h1>
+    <p class="sub">从零散问题到系统了解，用小习惯构建自己的游戏知识库。</p>
+    <span class="tagline">对照 · 延伸 · 记录</span>
+</header>
+
+<main class="container">
+
+    <!-- 优势 / 场景卡片 -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>🔍 快速对照</h3>
+            <p>遇到游戏术语、版本差异、平台规则时，不用反复搜索。在 <strong class="highlight">爱游戏</strong> 里对比信息，节省精力。</p>
+            <p style="margin-top:0.6rem;">比如角色技能说明、活动时间、奖励条件，随手可查。</p>
+        </div>
+        <div class="card">
+            <h3>📚 延伸阅读</h3>
+            <p>读完一条更新公告，顺便看看相关机制讲解、玩家经验或版本回顾。把孤立信息连成线。</p>
+            <p style="margin-top:0.6rem;">碎片时间也能积累对游戏更深的理解。</p>
+        </div>
+        <div class="card">
+            <h3>📋 日常笔记</h3>
+            <p>把零散的发现、疑问或者有趣的细节记下来。下次遇到同样问题，直接翻看，不用从头再来。</p>
+            <p style="margin-top:0.6rem;">一个属于自己的轻量游戏参考本。</p>
+        </div>
+    </div>
+
+    <!-- 说明 + FAQ 混合区 -->
+    <div class="info-section">
+        <h2>为什么需要查询与对照</h2>
+        <p>玩得越深，需要了解的东西就越细——某个道具的获取方式、活动档期、角色调整记录…… 这些信息散落在公告、论坛、社交频道里，找到的时候往往已经花了很长时间。</p>
+        <p>把查询和对照当作日常的一部分，就像随手翻翻手边的资料。不必每次都从零开始，也不用担心遗漏重要变化。你可以在 <a href="https://vipapp-igame.com">爱游戏</a> 里慢慢构建属于自己的参考脉络，让每次查阅都更有方向。</p>
+        
+        <div style="margin-top: 1.8rem;">
+            <div class="faq-item">
+                <div class="faq-question">FAQ：信息太多，从哪里入手？</div>
+                <div class="faq-answer">先从你最常遇到的问题开始。比如某个副本的机制、每周任务的刷新规则。记下关键点，再慢慢扩展关联内容。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">FAQ：延伸阅读会不会太杂？</div>
+                <div class="faq-answer">可以按游戏或主题分类，只关注自己感兴趣的方向。阅读本身不必追求完整，每次多了解一点点就够了。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">FAQ：怎么让查询更高效？</div>
+                <div class="faq-answer">养成先想后查的习惯——先明确自己要找什么，再去找对应的条目。如果发现内容有变化，顺手更新自己的记录。保持简单。</div>
+            </div>
+        </div>
+
+        <p style="margin-top: 1.6rem; font-size:0.95rem; color:#4a5b70;">—— 这些思路来自日常使用 <a href="https://vipapp-igame.com">爱游戏</a> 的体会，不需要一次性全做到，选一两个开始就好。</p>
+    </div>
+
+    <!-- 底部链接区域 -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="https://vipapp-igame.com">爱游戏</a>
+            <span>·</span>
+            <a href="#">查询习惯</a>
+            <span>·</span>
+            <a href="#">常见对照表</a>
+            <span>·</span>
+            <a href="#">延伸阅读</a>
+        </div>
+        <p style="margin-top: 0.6rem;">用日常查询和对照代替临时搜索，让信息自然沉淀。</p>
+        <p style="margin-top: 0.3rem; color:#7b889c;">© 爱游戏 · 生活化的游戏参考</p>
+    </footer>
+</main>
+
+</body>
+</html>
