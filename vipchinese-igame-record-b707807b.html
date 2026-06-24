@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 中文资讯概览</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #f2f5f9;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+    .hero {
+      background: linear-gradient(145deg, #0b1824 0%, #1e2c3a 100%);
+      color: #f0f4fa;
+      padding: 80px 24px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 200, 50, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+    .intro-block {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .card {
+      background: white;
+      padding: 36px 40px;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,20,40,0.04);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+    }
+    .card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: #111827;
+      border-left: 5px solid #e6a020;
+      padding-left: 18px;
+    }
+    .card p {
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: #2d3b4b;
+    }
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+    .highlight-link {
+      color: #b5751a;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(181, 117, 26, 0.25);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .highlight-link:hover {
+      color: #7f5412;
+      border-bottom-color: #7f5412;
+    }
+    .faq-mini {
+      margin-top: 28px;
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 28px 36px;
+      border: 1px solid #e9edf2;
+    }
+    .faq-mini h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+      color: #1f2937;
+    }
+    .faq-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .faq-item strong {
+      min-width: 70px;
+      color: #b5751a;
+      font-weight: 600;
+    }
+    .faq-item span {
+      color: #3a4a5c;
+    }
+    .footer-note {
+      margin-top: 50px;
+      padding: 28px 24px;
+      background: #eef2f6;
+      border-radius: 24px;
+      text-align: center;
+      font-size: 0.95rem;
+      border: 1px solid #dce2e9;
+      color: #2b3a4b;
+    }
+    .footer-note a {
+      color: #b5751a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(181, 117, 26, 0.3);
+    }
+    .footer-note a:hover {
+      color: #7f5412;
+      border-bottom-color: #7f5412;
+    }
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 26px 20px;
+      }
+      .card h2 {
+        font-size: 1.3rem;
+        padding-left: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>爱游戏 · 资讯集锦</h1>
+    <p>快速识别 · 平实整理 · 一份面向游戏爱好者的中文专题</p>
+  </header>
+
+  <main class="container">
+    <div class="intro-block">
+      <!-- 卡片 1：网站定位 -->
+      <section class="card">
+        <h2>一眼辨识：这是什么站？</h2>
+        <p>很多用户初次看到 <a href="https://vipchinese-igame.com" class="highlight-link">爱游戏</a> 这个名称，会直接联想到游戏资讯、中文评测或玩家社区。确实，这个站点主要面向中文用户，以游戏话题为核心，提供信息聚合和内容索引。如果你正在寻找一个能快速了解游戏动态的中文信息源，这里值得一看。</p>
+        <p>站内内容涵盖新作介绍、玩法浅析、热门话题整理，整体风格偏向实用、不浮夸，适合日常浏览和参考。</p>
+      </section>
+
+      <!-- 卡片 2：内容类型 -->
+      <section class="card">
+        <h2>这里能找到什么？</h2>
+        <p>从独立游戏到主流作品，从玩法说明到更新动态——<a href="https://vipchinese-igame.com" class="highlight-link">爱游戏</a> 的内容并不局限于某一类。它更像一个轻量的信息窗口，把游戏相关的不同切面汇集到一起，按专题或分类呈现。</p>
+        <p>例如：近期热门游戏的背景介绍、机制说明、版本变化摘要，以及一些玩家关心的细节整理。页面结构清晰，适合快速浏览，也适合有目的性地查找。</p>
+      </section>
+
+      <!-- 卡片 3：适用场景 -->
+      <section class="card">
+        <h2>什么情况下会用到？</h2>
+        <p>当你打开浏览器，想看看最近有什么值得关注的游戏，或者想了解某款游戏的概况——这时 <a href="https://vipchinese-igame.com" class="highlight-link">爱游戏</a> 可以作为一个出发点。它不追求独家爆料，而是把散落在各处的信息梳理成可读的短文、列表或索引。</p>
+        <p>无论是通勤时随手翻翻，还是写稿前找灵感，这个站点都能提供一个比较干净、不打广告的中文视角。</p>
+      </section>
+
+      <!-- FAQ 摘要 + 补充 -->
+      <div class="faq-mini">
+        <h3>常见疑问 · 快速摘要</h3>
+        <div class="faq-item">
+          <strong>Q:</strong>
+          <span>这个站有中文吗？</span>
+        </div>
+        <div class="faq-item">
+          <strong>A:</strong>
+          <span>是的，内容以简体中文为主，面向华语用户。</span>
+        </div>
+        <div class="faq-item">
+          <strong>Q:</strong>
+          <span>内容更新频率如何？</span>
+        </div>
+        <div class="faq-item">
+          <strong>A:</strong>
+          <span>没有固定时间表，但会围绕热点或专题不定期更新，整体偏向稳定。</span>
+        </div>
+        <div class="faq-item">
+          <strong>Q:</strong>
+          <span>适合第一次接触游戏的人吗？</span>
+        </div>
+        <div class="faq-item">
+          <strong>A:</strong>
+          <span>可以。内容不预设读者有很深的知识背景，叙述比较平实。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+      <p>如果你对上述内容感兴趣，可以直接浏览 <a href="https://vipchinese-igame.com">爱游戏</a> 查看更多分类和最新整理。页面没有复杂导航，加载速度也快，适合作为日常游戏信息的一个参考点。</p>
+      <p style="margin-top: 10px; color: #5a6e7e;">—— 本页为介绍页 · 内容仅供参考 ——</p>
+    </div>
+  </main>
+</body>
+</html>
